@@ -21,8 +21,22 @@
     />
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
 
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="http://weloveiconfonts.com/api/?family=entypo"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+
     <!--Custom CSS-->
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="Malado.css" type="text/css" />
 
     <link
       rel="stylesheet"
@@ -32,12 +46,13 @@
 
   <body>
     <!--Header and Top NavBar-->
+    <div class="cover"></div>
     <div class="menu-bar">
       <div class="container">
         <nav class="navbar navbar-expand-lg">
-          <a class="navbar-brand" href="./Home.html">Pico</a>
+          <a class="navbar-brand" href="./index.html">Pico</a>
 
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto text-right">
               <li class="nav-item">
                 <a class="nav-link" href="">Restaurant</a>
@@ -49,18 +64,18 @@
                 <a class="nav-link" href="">Dentals </a>
               </li>
             </ul>
-          </div>
+          </div> -->
         </nav>
       </div>
     </div>
-
+<!-- 
     <div class="container-fluid text-center">
       <div class="row align-items-center justify-content-center">
-        <div class="info">
-          <h1>Malado Sushi</h1>
-        </div>
+        <div class="info"> -->
+          <h1 style="position:absolute; font-size: 48px; top: 14%; left: 50%;z-index: 2000; color: white; transform: translateX(-50%);">Malado Sushi</h1>
+        <!-- </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- ABOUT -->
     <section id="about" class="py-5">
@@ -91,7 +106,6 @@
             <div class="item-container">
               <img src="images/rol.jpg" class="img-fluid img-thumbnail item-img" alt="menu-item" />
               <h1 class="text-center item-link mt-3 px-3">Salmon roll</h1>
-              <p class="text-center"><button>Add to Cart</button></p>
             </div>
           </div>
 
@@ -100,14 +114,57 @@
           <!-- popup part -->
           <div class="popup">
             <span id="close">&times;</span>
-            <p class="msg">How would you like to get your food?</p>
-            <div class="options">
-              <a class="pick" href="">Pick Up</a>
-              <a class="reserve" href="">Reservation</a>
-            </div>
+            <section class="shopping-cart">
+              <ol class="ui-list shopping-cart--list" id="shopping-cart--list">
+                <script id="shopping-cart--list-item-template" type="text/template">
+                  <li class="_grid shopping-cart--list-item">
+                    <div class="_column product-image">
+                      <img class="product-image--img" src="{{=img}}" alt="Item image" />
+                    </div>
+                    <div class="_column product-info">
+                      <h4 class="product-name">{{=name}}</h4>
+                      <p class="product-desc">{{=desc}}</p>
+                      <div class="price product-single-price">${{=price}}</div>
+                    </div>
+                    <div class="_column product-modifiers" data-product-price="{{=price}}">
+                      <div class="_grid">
+                        <button class="_btn _column product-subtract">&minus;</button>
+                        <div class="_column product-qty">0</div>
+                        <button class="_btn _column product-plus">&plus;</button>
+                      </div>
+                      <button class="_btn entypo-trash product-remove">Remove</button>
+                      <div class="price product-total-price">$0</div>
+                    </div>
+                  </li>
+                </script>
+              </ol>
+      
+              <footer class="_grid cart-totals">
+                <div class="_column subtotal" id="subtotalCtr">
+                  <div class="cart-totals-key">Subtotal</div>
+                  <div class="cart-totals-value">$0</div>
+                </div>
+                <!-- 
+                  <div class="_column shipping" id="shippingCtr">
+                  <div class="cart-totals-key">Shipping</div>
+                  <div class="cart-totals-value">$0.00</div>
+                </div>
+              -->
+                <div class="_column taxes" id="taxesCtr">
+                  <div class="cart-totals-key">Taxes</div>
+                  <div class="cart-totals-value">$0</div>
+                </div>
+                <div class="_column total" id="totalCtr">
+                  <div class="cart-totals-key">Total</div>
+                  <div class="cart-totals-value">$0</div>
+                </div>
+                <div class="_column checkout">
+                  <button id="cart-cont" class="_btn checkout-btn entypo-forward">Continue</button>
+                </div>
+              </footer>
+            </section>
           </div>
 
-          <div class="cover"></div>
 
           <!-- popup part end -->
           <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
@@ -119,7 +176,6 @@
                 alt="menu-item"
               />
               <h1 class="text-center item-link mt-3 px-3">White Salmon roll</h1>
-              <p class="text-center"><button>Add to Cart</button></p>
             </div>
           </div>
 
@@ -133,7 +189,6 @@
               />
 
               <h1 class=" text-center item-link  mt-3 px-3">Avocado roll</h1>
-              <p class="text-center"><button>Add to Cart</button></p>
             </div>
           </div>
 
@@ -146,7 +201,6 @@
                 alt="menu-item"
               />
               <h1 class="text-center item-link mt-3 px-3">Sushi roll</h1>
-              <p class="text-center"><button>Add to Cart</button></p>
             </div>
           </div>
 
@@ -159,7 +213,6 @@
                 alt="menu-item"
               />
               <h1 class="text-center item-link mt-3 px-3">Sashimi bowl</h1>
-              <p class="text-center"><button>Add to Cart</button></p>
             </div>
           </div>
 
@@ -172,7 +225,6 @@
                 alt="menu-item"
               />
               <h1 class="text-center item-link  mt-3 px-3">Sashimi boat</h1>
-              <p class="text-center"><button>Add to Cart</button></p>
             </div>
           </div>
         </div>
@@ -265,6 +317,33 @@
         </div>
       </div>
     </div>
+
+    <div class="popup-2">
+      <span id ="close">&times;</span>
+      <p>
+        When would like to book your reservation for?
+      </p>
+      <input type="datetime-local" id="picker" class="form-control-sm" />
+      <p class="continue-btn" id="popup2-cont">Continue</p>
+    </div>
+
+    <div class="popup-3">
+      <span id ="close">&times;</span>
+      <div>
+       <p>
+           Thank you for ordering wih us!
+          </p>
+          <small>
+           Here is your QR code for scanning in store.
+          </small>
+      </div>
+      <!-- QR code image -->
+      <img src="./images/QR.png" style="width: 120px; height: 120px;">         
+      <!-- <div class="options"> -->
+        <p class="continue-btn" id="final-popup-complete">Complete</p>
+      <!-- </div> -->
+    </div>
+
     <!-- footer -->
     <footer>
       <div class="text-center">
@@ -283,6 +362,7 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="Malado.js"></script>
   </body>
 </html>

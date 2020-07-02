@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
 
     <!--my CSS-->
-    <link rel="stylesheet" href="home.css" type="text/css" />
+    <link rel="stylesheet" href="RestaurantList.css" type="text/css" />
   </head>
 
   <body>
@@ -38,45 +38,49 @@
 
     <!--lists -->
 
-    <h2 class="text-center mt-4 mb-3">Services</h2>
     <div class="container">
+      <h2 class="mt-4 mb-3 page-title">Restaurants</h2>
+
       <div class="row row-cols-1 row-cols-md-3">
         <div class="col mb-4">
-          <div class="card bg-dark text-white">
-            <img src="./images/bowl.jpg" class="card-img-top" alt="..." />
-            <div class="card-img-overlay card-body">
-              <p class="card-text">Restaurants</p>
-              
+          <a href="./Malado.html">
+            <div class="card bg-dark text-white">
+              <img src="./images/bowl.jpg" class="card-img-top" alt="..." />
+              <div class="card-img-overlay card-body">
+                <p class="card-text">Malado Sushi</p>
+                <p class="card-caption">
+                  <span>Dine-in</span>
+                  <span>Patio</span>
+                  <span>Masks provided</span>
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
 
         <div class="col mb-3">
-          <div class="card bg-dark text-white">
-            <img src="./images/hairsalon.jpg" class="card-img-top" alt="..." />
-            <div class="card-img-overlay">
-              <p class="card-text">Beauty Salons</p>            
+          <a href="#">
+            <div class="card bg-dark text-white">
+              <img src="./images/noodles.jpg" class="card-img-top" alt="..." />
+              <div class="card-img-overlay">
+                <p class="card-text">Funny Noodle</p>
+                <p class="card-caption">
+                  <span>Take-out only</span>
+                  <span>Contactless</span>
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div class="col mb-3">
-          <div class="card bg-dark text-white">
-            <img src="./images/dental.jpg" class="card-img-top" alt="..." />
-            <div class="card-img-overlay">
-              <p class="card-text">Dental</p>
-            </div>
-          </div>
+          </a>
         </div>
       </div>
    </div>
 
     <!-- footer -->
-    <footer>
+    <footer class="global-footer">
       <div class="text-center">
         <p>
-          &copy; Copy right 2020 S-20
+          &copy; Copyright 2020 S-20
         </p>
         <div class="top">
           <a href="#"> <i class="fa fa-arrow-up"></i></a>

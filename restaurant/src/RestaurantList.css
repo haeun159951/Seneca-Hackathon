@@ -25,6 +25,20 @@ body {
   padding-top: 32px;
   font-weight: 700;
 }
+
+.card-caption {
+  position: absolute !important;
+  bottom: 18%;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  font-weight: lighter;
+  color: #d2d2d2;
+}
+
+.card-caption span {
+  padding: 0 12px;
+}
 /*
 .nav-link {
   font-family: 'Merriweather', serif;

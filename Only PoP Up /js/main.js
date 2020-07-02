@@ -4,7 +4,7 @@ $(document).ready(function(){
   $(".popup").fadeIn('slow');
     });
     $(".popup").on('click', function(){
-      if($(event.target).is("#close")){
+      if ($(event.target).is("#close")) {
           $(".cover").fadeOut('slow');    $(".popup").fadeOut('slow'); 
       }
     });
